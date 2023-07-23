@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SINP Eligibility Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>SINP Eligibility Calculator</h1>
+    <form id="sinpForm">
+        <label for="education">Education Level:</label><br>
+        <select id="education">
+            <option value="23">Master’s or Doctorate degree</option>
+            <option value="20">Canadian equivalency Bachelor’s degree OR a three or more year degree program at a university or college</option>
+            <option value="15">Canadian equivalency Diploma or certificate (minimum 2 year program)</option>
+            <option value="15">Canadian equivalency Trade certification</option>
+            <option value="12">Canadian equivalency (minimum 1 year program of study, or equivalent to a trade certificate)</option>
+        </select><br>
+        <label for="experience">Years of Experience:</label><br>
+        <input type="number" id="experience" min="0" max="5"><br>
+        <label for="language">CLB Level:</label><br>
+        <input type="number" id="language" min="4" max="8"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" min="18" max="50"><br>
+        <label for="connection">Connection to Saskatchewan:</label><br>
+        <select id="connection">
+            <option value="20">Close family relative in Saskatchewan</option>
+            <option value="5">Past work experience in Saskatchewan</option>
+            <option value="5">Past student experience in Saskatchewan</option>
+            <option value="0">None of the above</option>
+        </select><br>
+        <input type="submit" value="Calculate">
+    </form>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
