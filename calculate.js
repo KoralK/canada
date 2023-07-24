@@ -1,5 +1,6 @@
 function calculate() {
     var education = parseInt(document.getElementById('education').value);
+    console.log('Education points: ' + education);
     var experience = parseInt(document.getElementById('experience').value);
     var language = parseInt(document.getElementById('language').value);
     var age = parseInt(document.getElementById('age').value);
