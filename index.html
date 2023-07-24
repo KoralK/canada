@@ -1,36 +1,97 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>SINP Eligibility Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>SINP Eligibility Calculator</h1>
-    <form id="sinpForm">
-        <label for="education">Education Level:</label><br>
-        <select id="education">
-            <option value="23">Master’s or Doctorate degree</option>
-            <option value="20">Canadian equivalency Bachelor’s degree OR a three or more year degree program at a university or college</option>
-            <option value="15">Canadian equivalency Diploma or certificate (minimum 2 year program)</option>
-            <option value="15">Canadian equivalency Trade certification</option>
-            <option value="12">Canadian equivalency (minimum 1 year program of study, or equivalent to a trade certificate)</option>
-        </select><br>
-        <label for="experience">Years of Experience:</label><br>
-        <input type="number" id="experience" min="0" max="5"><br>
-        <label for="language">CLB Level:</label><br>
-        <input type="number" id="language" min="4" max="8"><br>
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" min="18" max="50"><br>
-        <label for="connection">Connection to Saskatchewan:</label><br>
-        <select id="connection">
-            <option value="20">Close family relative in Saskatchewan</option>
-            <option value="5">Past work experience in Saskatchewan</option>
-            <option value="5">Past student experience in Saskatchewan</option>
-            <option value="0">None of the above</option>
-        </select><br>
-        <input type="submit" value="Calculate">
-    </form>
-    <div id="result"></div>
-    <script src="script.js"></script>
+    <div class='form-group'>
+        <label for='education'>Education and Training</label>
+        <select id='education'>
+            <option value='23'>Master's or Doctorate degree, Canadian equivalency</option>
+            <option value='20'>Degree program of at least three years, Canadian equivalency</option>
+            <option value='20'>Trade certification equivalent to journeyperson status in Saskatchewan</option>
+            <option value='15'>Canadian post-secondary degree or diploma for two years, or equivalent</option>
+            <option value='12'>Canadian post-secondary degree or diploma for one year, or equivalent</option>
+            <option value='0'>Secondary school diploma or equivalent</option>
+        </select>
+    </div>
+    <div class='form-group'>
+        <label for='experience'>Skilled Work Experience</label>
+        <select id='experience'>
+            <option value='10'>5 years (in the 5 years prior to application)</option>
+            <option value='8'>4 years (in the 5 years prior to application)</option>
+            <option value='6'>3 years (in the 5 years prior to application)</option>
+            <option value='4'>2 years (in the 5 years prior to application)</option>
+            <option value='2'>1 year (in the 5 years prior to application)</option>
+            <option value='5'>5 years (in the 6-10 years prior to application)</option>
+            <option value='4'>4 years (in the 6-10 years prior to application)</option>
+            <option value='3'>3 years (in the 6-10 years prior to application)</option>
+            <option value='2'>2 years (in the 6-10 years prior to application)</option>
+            <option value='0'>Less than 1 year (in the 6-10 years prior to application)</option>
+        </select>
+    </div>
+    <div class='form-group'>
+        <label for='language'>Language Ability</label>
+        <select id='language'>
+            <option value='20'>CLB 8 and higher (First language)</option>
+            <option value='10'>CLB 8 and higher (Second language)</option>
+            <option value='18'>CLB 7 (First language)</option>
+            <option value='9'>CLB 7 (Second language)</option>
+            <option value='16'>CLB 6 (First language)</option>
+            <option value='8'>CLB 6 (Second language)</option>
+            <option value='14'>CLB 5 (First language)</option>
+            <option value='7'>CLB 5 (Second language)</option>
+            <option value='12'>CLB 4 (First language)</option>
+            <option value='6'>CLB 4 (Second language)</option>
+        </select>
+    </div>
+    <div class='form-group'>
+        <label for='age'>Age</label>
+        <select id='age'>
+            <option value='8'>18-21 years</option>
+            <option value='12'>22-34 years</option>
+            <option value='10'>35-45 years</option>
+            <option value='8'>46-50 years</option>
+            <option value='6'>51-54 years</option>
+            <option value='0'>55 and older</option>
+        </select>
+    </div>
+    <div class='form-group'>
+        <label for='connection'>Connection to Saskatchewan Labour Market & Adaptability</label>
+        <select id='connection'>
+            <option value='20'>Close relative in Saskatchewan</option>
+            <option value='5'>Past work experience in Saskatchewan</option>
+            <option value='5'>Past student experience in Saskatchewan</option>
+            <option value='30'>Offer of employment from a Saskatchewan employer</option>
+            <option value='0'>None</option>
+        </select>
+    </div>
+    <button onclick='calculate()'>Calculate</button>
+    <div id='result' class='result'></div>
 </body>
 </html>
